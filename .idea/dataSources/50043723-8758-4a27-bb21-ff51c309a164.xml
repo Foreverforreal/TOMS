@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="product@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.2">
+    <root id="1"/>
+    <schema id="2" parent="1" name="test">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mysql"/>
+    <schema id="5" parent="1" name="performance_schema"/>
+    <schema id="6" parent="1" name="sakila"/>
+    <schema id="7" parent="1" name="world"/>
+    <schema id="8" parent="1" name="product">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <table id="9" parent="2" name="g_car"/>
+    <table id="10" parent="2" name="g_order"/>
+    <table id="11" parent="2" name="goods"/>
+    <table id="12" parent="2" name="u_user"/>
+    <table id="13" parent="8" name="role"/>
+    <column id="14" parent="9" name="G_CAR_ID">
+      <Position>1</Position>
+      <DataType>int(5)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="15" parent="9" name="G_CAR_U_NAME">
+      <Position>2</Position>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <column id="16" parent="9" name="G_CAR_G_ID">
+      <Position>3</Position>
+      <DataType>int(5)|0</DataType>
+    </column>
+    <column id="17" parent="9" name="G_CAR_G_NAME">
+      <Position>4</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="18" parent="9" name="G_CAR_PRICE">
+      <Position>5</Position>
+      <DataType>double(10,2)|0</DataType>
+    </column>
+    <column id="19" parent="9" name="G_CAR_NUMBER">
+      <Position>6</Position>
+      <DataType>int(5)|0</DataType>
+    </column>
+    <column id="20" parent="9" name="G_CAR_G_MADE">
+      <Position>7</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="21" parent="9" name="G_CAR_CREATE_DATE">
+      <Position>8</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <key id="22" parent="9" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>G_CAR_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="23" parent="10" name="G_ORDER_ID">
+      <Position>1</Position>
+      <DataType>int(5)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="24" parent="10" name="G_ORDER_U_NAME">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="25" parent="10" name="G_ORDER_G_ID">
+      <Position>3</Position>
+      <DataType>int(5)|0</DataType>
+    </column>
+    <column id="26" parent="10" name="G_ORDER_PRICE">
+      <Position>4</Position>
+      <DataType>double(10,2)|0</DataType>
+    </column>
+    <column id="27" parent="10" name="G_ORDER_NUMBER">
+      <Position>5</Position>
+      <DataType>int(5)|0</DataType>
+    </column>
+    <column id="28" parent="10" name="G_ORDER_CREATE_DATE">
+      <Position>6</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <column id="29" parent="10" name="G_ORDER_RECEIVER">
+      <Position>7</Position>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <column id="30" parent="10" name="G_ORDER_PHONE">
+      <Position>8</Position>
+      <DataType>char(11)|0</DataType>
+    </column>
+    <column id="31" parent="10" name="G_ORDER_ADDRESS">
+      <Position>9</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <key id="32" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>G_ORDER_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="33" parent="11" name="G_ID">
+      <Position>1</Position>
+      <DataType>int(5)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="34" parent="11" name="G_NAME">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="35" parent="11" name="G_DESCRIBE">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="36" parent="11" name="G_PRICE">
+      <Position>4</Position>
+      <DataType>double(10,2)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="37" parent="11" name="G_MADE">
+      <Position>5</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="38" parent="11" name="G_AMOUNT">
+      <Position>6</Position>
+      <DataType>int(5)|0</DataType>
+    </column>
+    <column id="39" parent="11" name="G_CREATE_DATE">
+      <Position>7</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <column id="40" parent="11" name="G_PIC">
+      <Position>8</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <key id="41" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>G_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="42" parent="12" name="U_NAME">
+      <Position>1</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="43" parent="12" name="U_ID">
+      <Position>2</Position>
+      <DataType>int(5)|0</DataType>
+    </column>
+    <column id="44" parent="12" name="U_NICK_NAME">
+      <Position>3</Position>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <column id="45" parent="12" name="U_SEX">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="46" parent="12" name="U_PASSWORD">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="47" parent="12" name="U_EMAIL">
+      <Position>6</Position>
+      <DataType>varchar(25)|0</DataType>
+    </column>
+    <column id="48" parent="12" name="U_STATE">
+      <Position>7</Position>
+      <DataType>int(1)|0</DataType>
+    </column>
+    <column id="49" parent="12" name="U_IS_SELLER">
+      <Position>8</Position>
+      <DataType>int(1)|0</DataType>
+    </column>
+    <column id="50" parent="12" name="U_LAST_LOGIN_TIME">
+      <Position>9</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <column id="51" parent="12" name="U_CREATE_DATE">
+      <Position>10</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <key id="52" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>U_NAME</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="53" parent="13" name="id">
+      <Position>1</Position>
+      <DataType>smallint(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="54" parent="13" name="type">
+      <Position>2</Position>
+      <DataType>varchar(5)|0</DataType>
+    </column>
+    <key id="55" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
