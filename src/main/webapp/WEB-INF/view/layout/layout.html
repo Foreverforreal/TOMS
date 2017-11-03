@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <!--/*  每部分会被他们表示的页面title所替换 */-->
+    <title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">运营管理</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <!--通用css-->
+    <link href="resources/css/bootstrap.min.css" rel="stylesheet" media="screen" th:href="@{/resources/css/bootstrap.min.css}"/>
+    <link href="resources/css/main.css" rel="stylesheet" media="screen" th:href="@{/resources/css/main.css}"/>
+
+    <!--通用js-->
+    <script src="resources/js/jquery.min.js" th:src="@{/resources/js/jquery.min.js}"></script>
+    <script src="resources/js/bootstrap.min.js" th:src="@{/resources/js/bootstrap.min.js}"></script>
+
+
+</head>
+
+<body>
+<div th:replace="fragments/header :: header "></div>
+
+<div class="container">
+    <div layout:fragment="content"></div>
+</div>
+
+<div th:replace="fragments/footer :: footer "></div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>header</title>
+</head>
+<body>
+<nav class="navbar navbar-default" th:fragment="header">
+<div class="container">
+    <!--导航条头部部分-->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/" th:href="@{/}">运</a>
+    </div>
+
+    <!--导航条组件部分-->
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-left">
+            <li th:classappend="${module == 'home' ? 'active' : ''}">
+                <a href="#" th:href="@{/school}">学校管理</a>
+            </li>
+            <li th:classappend="${module == 'home' ? 'active' : ''}">
+                <a href="#" th:href="@{/student}">学生管理</a>
+            </li>
+            <li th:classappend="${module == 'home' ? 'active' : ''}">
+                <a href="#" th:href="@{/major}">专业管理</a>
+            </li>
+            <li th:classappend="${module == 'home' ? 'active' : ''}">
+                <a href="#" th:href="@{/course}">课程管理</a>
+            </li>
+            <li th:classappend="${module == 'home' ? 'active' : ''}">
+                <a href="#" th:href="@{/acouunt}">用户管理</a>
+            </li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+            <li >
+                <a href="/logout" th:href="@{#}" onclick="$('#form').submit();">
+                    <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>&nbsp;退出
+                </a>
+                <form style="visibility: hidden" id="form" method="post" action="#" th:action="@{/logout}"></form>
+            </li>
+        </ul>
+    </div>
+ </div>
+</nav>
+</body>
+</body>
+</html>
