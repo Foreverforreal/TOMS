@@ -1,23 +1,25 @@
 package zhu.entity;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
-/**
- * Created by zhu on 2017/10/27.
- */
 public class User {
-    private int id;
-    private String name;
-    private String password;
-    private int roleId;
-    private String phone;
-    private LocalDateTime createTime;
+    private Integer id;
 
-    public int getId() {
+    private String name;
+
+    private String password;
+
+    private Short roleId;
+
+    private String phone;
+
+    private Date createTime;
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -26,7 +28,7 @@ public class User {
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.name = name == null ? null : name.trim();
     }
 
     public String getPassword() {
@@ -34,14 +36,14 @@ public class User {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.password = password == null ? null : password.trim();
     }
 
-    public int getRoleId() {
+    public Short getRoleId() {
         return roleId;
     }
 
-    public void setRoleId(int roleId) {
+    public void setRoleId(Short roleId) {
         this.roleId = roleId;
     }
 
@@ -50,14 +52,14 @@ public class User {
     }
 
     public void setPhone(String phone) {
-        this.phone = phone;
+        this.phone = phone == null ? null : phone.trim();
     }
 
-    public LocalDateTime getCreateTime() {
+    public Date getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(LocalDateTime createTime) {
+    public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
 }

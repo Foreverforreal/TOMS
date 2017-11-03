@@ -1,23 +1,45 @@
 package zhu.realm;
 
-import org.apache.shiro.authc.AuthenticationException;
-import org.apache.shiro.authc.AuthenticationInfo;
-import org.apache.shiro.authc.AuthenticationToken;
-import org.apache.shiro.realm.Realm;
+import org.apache.shiro.authc.*;
+import org.apache.shiro.authz.AuthorizationInfo;
+import org.apache.shiro.authz.SimpleAuthorizationInfo;
+import org.apache.shiro.realm.AuthorizingRealm;
+import org.apache.shiro.subject.PrincipalCollection;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import zhu.entity.User;
+import zhu.service.UserService;
 
-/**
- * Created by zhu on 2017/10/27.
- */
-public class UserRealm implements Realm {
-    public String getName() {
-        return null;
+import java.util.Objects;
+import java.util.Set;
+
+@Service
+public class UserRealm extends AuthorizingRealm {
+
+    @Autowired
+    private UserService userService;
+
+    @Override
+    protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
+        UsernamePasswordToken token = (UsernamePasswordToken)authenticationToken;
+        User user = userService.findByName(token.getUsername());
+
+        if(Objects.isNull(user)){
+            throw new UnknownAccountException("用户不存在");
+        }
+
+        String accountName = user.getName();
+        String password = user.getPassword();
+        return  new SimpleAuthenticationInfo(accountName,password,getName());
+
     }
 
-    public boolean supports(AuthenticationToken authenticationToken) {
-        return false;
+    @Override
+    protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
+        String primaryPrincipal = (String)principalCollection.getPrimaryPrincipal();
+        Set<String> roles = userService.findRoleByUserName(primaryPrincipal);
+
+        return new SimpleAuthorizationInfo(roles);
     }
 
-    public AuthenticationInfo getAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
-        return null;
-    }
 }

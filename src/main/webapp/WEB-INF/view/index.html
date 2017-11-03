@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>运营管理</title>
 </head>
 <body>
-
+<div layout:fragment="content">
+    <p th:utext="${token}">测试页面</p>
+    <p>helloword  ff</p>
+</div>
 </body>
 </html>
